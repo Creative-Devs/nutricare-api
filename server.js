@@ -20,7 +20,6 @@ server.use(cors());
 server.use(express.json());
 
 // seedUserData();
-
 server.get('/recipes', getRecipes);
 server.post('/recipe', createRecipe);
 server.delete('/recipe/:recipe_id', deleteRecipe);
