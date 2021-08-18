@@ -43,9 +43,11 @@ const createRecipe = (req, res) => {
 
 const deleteRecipe = (req, res) => {
     const id = req.params.recipe_id;
-
+    console.log(id)
     userModel.deleteOne({ _id: id }, (error, recipe) => {
-        res.json(recipe.deletedCount);
+        userModel.find({}, (error, result) => {
+            res.send(result)
+        })
     });
 }
 const updateRecipe = async (req, res) => {
